@@ -196,28 +196,3 @@ db.serialize(() => {
     }
   );
 });
-
-
-//
-// select all the rows from a table from Flower. In the callback, check if the petal_color is ‘blue’ and console.log the row if it is.
-const db = require('./db');
-db.each("SELECT * FROM Flower", (err, row) => {
-  if (row.petal_color === "blue") {
-    console.log(row);
-  }
-});
-
-//
-// create empty table
-const db = require('./db');
- db.run(
-    "CREATE TABLE City ()"
-  );
-
-
-//
-// SELECT the superpower column of the superhero in the Superhero table with an id of 12
-const db = require('./db');
-db.get("SELECT superpower FROM Superhero WHERE id=12", (err, row) => {
-  console.log(row.superpower);
-});
